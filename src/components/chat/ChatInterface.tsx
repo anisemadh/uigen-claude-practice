@@ -23,13 +23,13 @@ export function ChatInterface() {
   }, [messages]);
 
   return (
-    <div className="flex flex-col h-full p-4 overflow-hidden">
-      <ScrollArea ref={scrollAreaRef} className="flex-1 overflow-hidden">
-        <div className="pr-4">
+    <div className="flex flex-col h-full overflow-hidden">
+      <ScrollArea ref={scrollAreaRef} className="flex-1 overflow-hidden p-4">
+        <div className="pr-4 h-full">
           <MessageList messages={messages} isLoading={status === "streaming"} />
         </div>
       </ScrollArea>
-      <div className="mt-4 flex-shrink-0">
+      <div className="p-4 pt-0 flex-shrink-0">
         <MessageInput
           input={input}
           handleInputChange={handleInputChange}
