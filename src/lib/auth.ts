@@ -19,7 +19,11 @@ export async function createSession(userId: string, email: string) {
   const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // 7 days
   const session: SessionPayload = { userId, email, expiresAt };
 
-  const token = await new SignJWT({ ...session })
+  const token = await new SignJWT({ 
+    userId, 
+    email, 
+    expiresAt: expiresAt.toISOString() 
+  })
     .setProtectedHeader({ alg: "HS256" })
     .setExpirationTime("7d")
     .setIssuedAt()

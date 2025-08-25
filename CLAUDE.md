@@ -88,3 +88,4 @@ Components are rendered using:
 - React 19 with concurrent features
 - TypeScript throughout with strict configuration
 - Add comments sparingly. Only add comments for complex code.
+- vitest config is in vitest.config.mts
